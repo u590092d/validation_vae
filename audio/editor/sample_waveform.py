@@ -252,7 +252,8 @@ class SampleWaveform(tk.Frame):
 
     def click_mouse(self,event):
         if (self.player.state != AudioState.NONE) and (self.player.state != AudioState.PLAY):
-            self.player.playback_position = self.mouse_x
+            if(self.mouse_x>=0):
+                self.player.playback_position = self.mouse_x
 
     def set_seekbar(self, sec:float):
         # clear canvas
